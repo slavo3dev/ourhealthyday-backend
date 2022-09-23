@@ -1,25 +1,24 @@
 {
-  "name": "ourhealthyday-backend",
+  "name": "prototypenextapi",
   "version": "1.0.0",
-  "description": "OurHealthyDay Servers and EndPoints",
+  "description": "Prototype.NEXT share link api",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/slavo3dev/ourhealthyday-backend.git"
-  },
   "keywords": [],
-  "author": "Prototype.NEXT",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/slavo3dev/ourhealthyday-backend/issues"
-  },
-  "homepage": "https://github.com/slavo3dev/ourhealthyday-backend#readme",
   "dependencies": {
-    "express": "^4.18.1",
-    "nodemon": "^2.0.19"
+    "aws-sdk": "^2.601.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-jwt": "^5.3.1",
+    "express-validator": "^6.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2"
   }
 }
