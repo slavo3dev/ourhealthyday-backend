@@ -7,7 +7,7 @@ AWS.config.update({
 })
 
 
-const ses = AWS.SES({apiVersion: '2010-12-01'})
+const ses = new AWS.SES({apiVersion: '2010-12-01'})
 
 exports.register = (req,res) => {
     console.log('REGISTER CONTROLLER',req.body);
@@ -27,22 +27,23 @@ exports.register = (req,res) => {
                     Data: `<html><body><h1>Hello ${name}, </h1><p>Test Email</p></body></html>`
                 }
             },
-            Subjcet: {
+            Subject
+                : {
                 Charset: "UTF-8",
                 Data: `Complete Your Registration`
             }
         }
     }
 
-    const sendEmailOnRegister = ses.sendEmail(params).promise()
+    const sendEmailOnRegister = ses.sendEmail(params).promise();
 
     sendEmailOnRegister
         .then(data => {
-            console.log("email to SES: ",data);
-            res.send("e-mail sent");
+            console.log('email submitted to SES', data);
+            res.send('Email sent');
         })
         .catch(error => {
-            console.log("Emain on Register faild: ",error);
-            res.send("email faild")
+            console.log('ses email on register', error);
+            res.send('email failed');
         });
 };
